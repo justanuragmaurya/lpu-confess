@@ -1,4 +1,4 @@
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card as CardA, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { format } from "date-fns"
 import { Clock, MessageCircle } from "lucide-react"
@@ -40,7 +40,7 @@ export default function ConfessionCard({ confession = defaultConfession }: Confe
   } = confession
 
   return (
-    <Card className="w-full max-w-md mx-auto bg-[#0a0a0a] text-gray-100 border-[0.5px] border-gray-500 shadow-lg">
+    <CardA className="w-full max-w-md mx-auto bg-[#0a0a0a] text-gray-100 border-[0.5px] border-gray-500 shadow-lg">
       <CardHeader className="border-b border-gray-700">
         <div className="flex items-center space-x-4">
           <Avatar>
@@ -65,6 +65,6 @@ export default function ConfessionCard({ confession = defaultConfession }: Confe
           {format(new Date(timestamp || ""), "MMMM d, yyyy 'at' h:mm a")}
         </time>
       </CardFooter>
-    </Card>
+    </CardA>
   )
 }
