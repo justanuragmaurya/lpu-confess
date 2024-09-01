@@ -1,23 +1,24 @@
 "use client"
-import { waveform } from 'ldrs'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-
-
+import { waveform } from 'ldrs';
 
 export default function Page() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(false);
-  waveform.register()
   const router = useRouter();
+
+  useEffect(() => {
+    waveform.register();
+  }, []);
 
   async function handleClick() {
     setLoading(true);
-    await axios.post("/api/post", { title, content })
-    router.push("/confessions")
-    setLoading(false)
+    await axios.post("/api/post", { title, content });
+    router.push("/confessions");
+    setLoading(false);
   }
 
   return (
