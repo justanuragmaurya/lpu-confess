@@ -4,12 +4,13 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 
-waveform.register()
 
-export default function page() {
+
+export default function Page() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(false);
+  waveform.register()
   const router = useRouter();
 
   async function handleClick() {
