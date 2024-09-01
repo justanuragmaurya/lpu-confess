@@ -20,7 +20,6 @@ export default function Page() {
     router.push("/confessions");
     setLoading(false);
   }
-
   return (
     <div className="flex flex-col p-5 items-center justify-center mt-32">
       <div className="bg-[#0a0a0a] p-5 border-[0.5px] border-gray-700 rounded-lg sm:w-1/3 w-full flex flex-col gap-5 text-gray-400">

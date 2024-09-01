@@ -6,11 +6,15 @@ import ConfessionCard from './card';
 
 export default function Confessions() {
     const [data, setData] = useState<any[]>([]);
-    const [loading,setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
 
     const getData = async () => {
-        const response = await axios.get("/api/confessions");
-        setLoading(false)
+        const response = await axios.get("/api/confessions", {
+            headers: {
+                'Cache-Control': 'no-store'
+            }
+        });
+        setLoading(false);
         return response.data;
     }
 
@@ -18,8 +22,8 @@ export default function Confessions() {
         getData().then(fetchedData => setData(fetchedData));
     }, []);
 
-    if(loading){
-        return(<div className='text-white flex items-center justify-center mt-56'>Loading</div>)
+    if (loading) {
+        return (<div className='text-white flex items-center justify-center mt-56'>Loading</div>);
     }
 
     return (
