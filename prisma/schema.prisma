@@ -18,14 +18,11 @@ model User {
   email String  @unique
   name  String?
   avatarUrl String
-  posts Confessions[]
 }
 
 model Confessions {
   id        Int     @id @default(autoincrement())
   title     String
-  content   String?
+  content   String
   date      DateTime @default(now())
-  author    User    @relation(fields: [authorId], references: [id])
-  authorId  Int
 }

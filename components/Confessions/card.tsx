@@ -12,7 +12,7 @@ interface Confession {
   id?: number
   title?: string
   content?: string
-  timestamp?: string
+  date?: string
   author?: Author
 }
 
@@ -24,10 +24,10 @@ const defaultConfession: Confession = {
   id: 1,
   title: "Lorem Ipsum Confession",
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  timestamp: new Date().toISOString(),
+  date: new Date().toISOString(),
   author: {
-    username: "lorem_user",
-    avatarUrl: "/placeholder.svg?height=40&width=40"
+    username: "anonymous",
+    avatarUrl: "https://randomuser.me/api/portraits/men/75.jpg"
   }
 }
 
@@ -35,7 +35,7 @@ export default function ConfessionCard({ confession = defaultConfession }: Confe
   const {
     title = defaultConfession.title,
     content = defaultConfession.content,
-    timestamp = defaultConfession.timestamp,
+    date = defaultConfession.date,
     author = defaultConfession.author
   } = confession
 
@@ -44,7 +44,7 @@ export default function ConfessionCard({ confession = defaultConfession }: Confe
       <CardHeader className="border-b border-gray-700">
         <div className="flex items-center space-x-4">
           <Avatar>
-            <AvatarImage src={author?.avatarUrl} alt={author?.username} />
+            <AvatarImage src={"https://static.vecteezy.com/system/resources/thumbnails/001/840/618/small/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg"} alt={author?.username} />
             <AvatarFallback>{author?.username?.slice(0, 2).toUpperCase()}</AvatarFallback>
           </Avatar>
           <div>
@@ -61,8 +61,8 @@ export default function ConfessionCard({ confession = defaultConfession }: Confe
       </CardContent>
       <CardFooter className="text-sm text-gray-400 flex items-center gap-2">
         <Clock className="h-4 w-4" />
-        <time dateTime={timestamp}>
-          {format(new Date(timestamp || ""), "MMMM d, yyyy 'at' h:mm a")}
+        <time dateTime={date}>
+          {format(new Date(date || ""), "MMMM d, yyyy 'at' h:mm a")}
         </time>
       </CardFooter>
     </CardA>
