@@ -9,6 +9,7 @@ export default function Home() {
         A safe space to voice your thoughts and experiences.
         Share your feelings, discuss campus life, and connect with others anonymously.
         </h2>
+        <button className="text-white px-3 py-1 rounded-full font-bold border-[0.5px] border-gray-500 bg-[#fafafa]"><span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">See Confessions</span></button>
       </div>
       <div>
       </div>
