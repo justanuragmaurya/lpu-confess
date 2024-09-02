@@ -17,7 +17,6 @@ export default function Confessions() {
         setLoading(false);
         return response.data;
     }
-
     useEffect(() => {
         getData().then(fetchedData => setData(fetchedData));
     }, []);
