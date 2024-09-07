@@ -12,3 +12,5 @@ export async function GET(req: NextRequest) {
         }
     });
 }
+
+export const fetchCache = 'force-no-store';
