@@ -9,13 +9,10 @@ export default function Confessions() {
     const [loading, setLoading] = useState(true);
 
     const getData = async () => {
-        const response = await axios.get("/api/confessions", {
-            headers: {
-                'Cache-Control': 'no-store'
-            }
-        });
+        const response = await fetch("/api/confessions",{cache:"no-store"});
+        const result = await response.json();
         setLoading(false);
-        return response.data;
+        return result;
     }
     useEffect(() => {
         getData().then(fetchedData => setData(fetchedData));
