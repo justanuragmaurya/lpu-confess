@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 import DotPattern from "@/components/magicui/dot-pattern";
 import { Montserrat } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] });
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -34,6 +35,7 @@ export default function RootLayout({
           "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] opacity-40 -z-10",
         )}
       />
+      <Analytics/>
       </body>
     </html>
   );
