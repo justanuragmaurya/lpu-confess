@@ -3,10 +3,10 @@ import { PrismaClient } from '@prisma/client';
 import { cookies } from "next/headers";
 
 const client = new PrismaClient();
-const _ = cookies()
+
 
 export async function GET(req: NextRequest) {
-    
+    const _ = cookies()
     const data = await client.confessions.findMany();
     return new Response(JSON.stringify(data), {
         headers: {
