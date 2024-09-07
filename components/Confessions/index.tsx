@@ -9,7 +9,7 @@ export default function Confessions() {
     const [loading, setLoading] = useState(true);
 
     const getData = async () => {
-        const response = await fetch("/api/confessions",{cache:"no-store"});
+        const response = await fetch(`/api/confessions?id=${Math.random()}`,{cache:"no-store"});
         const result = await response.json();
         setLoading(false);
         return result;
@@ -34,3 +34,4 @@ export default function Confessions() {
         </div>
     );
 }
+export const fetchCache = 'force-no-store';
